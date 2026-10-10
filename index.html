@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>HealthCare Pro | Smart Healthcare Management</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="container header-content">
+    <a class="logo" href="#home"><i class="fas fa-heartbeat"></i> HealthCare Pro</a>
+    <nav><a href="#features">Features</a><a href="#doctors">Doctors</a><a href="#dashboard">Dashboard</a><a href="#about">About</a></nav>
+    <div class="auth-buttons"><button class="btn btn-outline" id="loginBtn">Login</button><button class="btn btn-primary" id="signupBtn">Sign Up</button></div>
+  </div>
+</header>
+
+<main id="home">
+<section class="hero"><div class="container hero-inner">
+  <div><span class="eyebrow">SMART • CONNECTED • PATIENT-FIRST</span><h1>Healthcare management, made simpler.</h1><p>Book doctors, manage records, track medicines and keep your family's healthcare organized from one place.</p>
+  <div class="hero-buttons"><button class="btn btn-primary" id="getStarted">Get Started</button><button class="btn btn-outline" id="emergencyBtn"><i class="fas fa-phone"></i> Emergency</button></div></div>
+  <div class="hero-card"><i class="fas fa-shield-heart"></i><h3>One health hub</h3><p>Your appointments, reminders, family profiles and health timeline stay organized in one dashboard.</p><div class="mini-stat"><b>24/7</b><span>Access to your health information</span></div></div>
+</div></section>
+
+<section id="features" class="section"><div class="container"><div class="section-title"><span class="eyebrow">WHY HEALTHCARE PRO</span><h2>More than appointment booking</h2><p>Built-in differentiators turn a simple portal into a useful healthcare companion.</p></div>
+<div class="features-grid">
+  <article class="feature-card"><i class="fas fa-wand-magic-sparkles"></i><h3>Smart Doctor Match</h3><p>Choose a specialty, urgency and preferred time to get the best matching doctors from the demo directory.</p></article>
+  <article class="feature-card"><i class="fas fa-pills"></i><h3>Medicine Reminders</h3><p>Create medicine schedules and mark doses as taken. Reminders persist in your browser.</p></article>
+  <article class="feature-card"><i class="fas fa-people-roof"></i><h3>Family Profiles</h3><p>Keep separate health profiles for family members and switch between them instantly.</p></article>
+  <article class="feature-card"><i class="fas fa-timeline"></i><h3>Health Timeline</h3><p>See appointments, prescriptions and health events in chronological order.</p></article>
+  <article class="feature-card"><i class="fas fa-truck-medical"></i><h3>Emergency Access</h3><p>One-click emergency panel with important contacts and a quick location-sharing action.</p></article>
+  <article class="feature-card"><i class="fas fa-lock"></i><h3>Privacy First</h3><p>Demo data is kept locally in your browser. No real medical data should be entered into this prototype.</p></article>
+</div></div></section>
+
+<section id="doctors" class="section alt"><div class="container"><div class="section-title"><span class="eyebrow">DOCTOR DIRECTORY</span><h2>Find the right doctor</h2></div>
+<div class="search-row"><input id="doctorSearch" placeholder="Search doctor or specialty..."><select id="specialtyFilter"><option value="all">All specialties</option><option>Cardiology</option><option>Dermatology</option><option>Pediatrics</option><option>General Medicine</option><option>Neurology</option></select></div><div id="doctorList" class="doctor-grid"></div></div></section>
+
+<section id="dashboard" class="section"><div class="container"><div class="dashboard-head"><div><span class="eyebrow">PERSONAL DASHBOARD</span><h2>Welcome, <span id="userName">Guest</span></h2></div><button class="btn btn-primary" id="addAppointmentBtn"><i class="fas fa-plus"></i> Book Appointment</button></div>
+<div class="dashboard-tabs"><button class="tab-btn active" data-tab="overview">Overview</button><button class="tab-btn" data-tab="appointments">Appointments</button><button class="tab-btn" data-tab="medicines">Medicines</button><button class="tab-btn" data-tab="family">Family</button><button class="tab-btn" data-tab="timeline">Health Timeline</button></div>
+<div id="overview" class="tab-content active"><div class="stats-grid"><div class="stat-card"><i class="fas fa-calendar-check"></i><b id="upcomingCount">0</b><span>Upcoming appointments</span></div><div class="stat-card"><i class="fas fa-pills"></i><b id="medicineCount">0</b><span>Active medicines</span></div><div class="stat-card"><i class="fas fa-users"></i><b id="familyCount">1</b><span>Family profiles</span></div><div class="stat-card"><i class="fas fa-clock"></i><b id="nextAppointment">—</b><span>Next appointment</span></div></div><div class="two-col"><div class="panel"><h3>Today's medicine</h3><div id="todayMeds"></div></div><div class="panel"><h3>Quick actions</h3><div class="quick-actions"><button class="action" id="matchBtn"><i class="fas fa-wand-magic-sparkles"></i> Smart doctor match</button><button class="action" id="timelineBtn"><i class="fas fa-timeline"></i> View health timeline</button><button class="action danger" id="quickEmergency"><i class="fas fa-truck-medical"></i> Emergency help</button></div></div></div></div>
+<div id="appointments" class="tab-content"><div class="panel"><div class="panel-title"><h3>My appointments</h3><button class="btn btn-primary" id="bookFromTab">+ New</button></div><div id="appointmentTable"></div></div></div>
+<div id="medicines" class="tab-content"><div class="two-col"><div class="panel"><h3>Add medicine</h3><form id="medicineForm" class="form"><input id="medName" required placeholder="Medicine name"><input id="medDose" required placeholder="Dose e.g. 500 mg"><input id="medTime" required type="time"><button class="btn btn-primary">Add reminder</button></form></div><div class="panel"><h3>My medicines</h3><div id="medicineList"></div></div></div></div>
+<div id="family" class="tab-content"><div class="panel"><div class="panel-title"><h3>Family profiles</h3><button class="btn btn-primary" id="addFamilyBtn">+ Add member</button></div><div id="familyList" class="family-grid"></div></div></div>
+<div id="timeline" class="tab-content"><div class="panel"><h3>Health timeline</h3><div id="timelineList" class="timeline"></div></div></div>
+</div></section>
+</main>
+
+<footer id="about"><div class="container footer"><div><h3><i class="fas fa-heartbeat"></i> HealthCare Pro</h3><p>A functional academic prototype for healthcare management.</p></div><div><b>Demo notice</b><p>For educational use only. Not a medical device or emergency service.</p></div></div></footer>
+
+<div class="modal" id="modal"><div class="modal-box"><button class="close" id="closeModal">&times;</button><div id="modalContent"></div></div></div>
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
+</body></html>
